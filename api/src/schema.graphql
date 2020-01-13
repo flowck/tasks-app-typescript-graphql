@@ -1,0 +1,11 @@
+type Query {
+  hello: String
+  tasks: [task]
+}
+
+type task {
+  title: String,
+  description: String,
+  status: Boolean,
+  user_id: Int
+}
