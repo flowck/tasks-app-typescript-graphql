@@ -7,5 +7,9 @@ type task {
   title: String,
   description: String,
   status: Boolean,
-  user_id: Int
+  user_id: String
+}
+
+type Mutation {
+  createTask(title: String!, description: String, user_id: String): task!
 }
