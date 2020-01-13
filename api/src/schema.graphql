@@ -4,6 +4,7 @@ type Query {
 }
 
 type task {
+  id: Int,
   title: String,
   description: String,
   status: Boolean,
@@ -12,4 +13,5 @@ type task {
 
 type Mutation {
   createTask(title: String!, description: String, user_id: String): task!
+  updateTaskStatus(task_id: Int, status: Boolean): task!
 }

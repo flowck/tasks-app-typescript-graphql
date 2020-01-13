@@ -26,6 +26,25 @@ export default {
       } catch(error) {
         return error;
       }
+    },
+    async updateTaskStatus(parent, args) {
+      try {
+        const updatedTask = await Models.tasks.update(
+          {
+            status: args.status
+          },
+          { 
+            where: { id: args.task_id },
+            returning: true
+          }
+        );
+  
+        const getTask = await Models.tasks.findByPk(args.task_id);
+
+        return getTask;
+      } catch(error) {
+        return error;
+      }
     }
   }
 }
