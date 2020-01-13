@@ -1,1 +1,4 @@
 node_modules
+
+# Databases
+api/src/**/*.sqlite
